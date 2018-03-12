@@ -13,10 +13,10 @@ import TabBarIcon from "./TabBarIcon";
 
 import type {
   NavigationAction,
-  NavigationRoute,
-  NavigationState,
-  NavigationScreenProp,
-  Style
+    NavigationRoute,
+    NavigationState,
+    NavigationScreenProp,
+    Style
 } from "../../TypeDefinition";
 
 import type { TabScene } from "./TabView";
@@ -39,7 +39,7 @@ type Props = {
   position: Animated.Value,
   navigation: NavigationScreenProp<NavigationState, NavigationAction>,
   jumpToIndex: (index: number) => void,
-  getLabel: (scene: TabScene) => ?(React.Element<*> | string),
+  getLabel: (scene: TabScene) =>?(React.Element<*> | string),
   renderIcon: (scene: TabScene) => React.Element<*>,
   showLabel: boolean,
   style?: Style,
@@ -51,7 +51,7 @@ export default class TabBarBottom extends PureComponent<
   DefaultProps,
   Props,
   void
-> {
+  > {
   // See https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/UIKitUICatalog/UITabBar.html
   static defaultProps = {
     activeTintColor: "#3478f6", // Default active tint color in iOS 10
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
   label: {
     textAlign: "center",
     fontSize: 10,
-    marginBottom: 1.5,
+    marginBottom: Platform.OS === "ios" ? 1.5 : 8,
     backgroundColor: "transparent"
   }
 });
