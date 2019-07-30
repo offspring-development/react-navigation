@@ -199,8 +199,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#f4f4f4" // Default background color in iOS 10
   },
   tab: {
-    // flex: 1,
-    width: widthScreen / 4,
+    flex: 1,
+    //width: widthScreen / 4,
     alignItems: "stretch",
     justifyContent: "flex-end"
   },
